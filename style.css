@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: url("v602-nunoon-18-rippednotes.jpg");
+    background-size: cover;
+    overflow: hidden;
+}
+h1{
+  text-align: center;
+}
+
+span{
+    background: url("https://cdn4.iconfinder.com/data/icons/small-n-flat/24/heart-1024.png");
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    pointer-events: none;
+    background-size: cover;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: animate 10s;
+}
+
+@keyframes animate {
+    0% {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+        filter: hue-rotate(0);
+    }
+    100% {
+        transform: translate(-50%, -5000%);
+        opacity: 0;
+        filter: hue-rotate(920deg);
+    }
+}
+
+
+
+
+/* Bigger, more visible heart */
+span {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: red;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  pointer-events: none;
+  animation: fadeOut 2s linear forwards;
+}
+
+span::before,
+span::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: inherit; /* same color as parent */
+  border-radius: 50%;
+}
+
+span::before {
+  top: -20px;
+  left: 0;
+}
+
+span::after {
+  left: 20px;
+  top: 0;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(-45deg) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(-45deg) scale(2);
+  }
+}
+
+
